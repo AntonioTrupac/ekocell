@@ -1,0 +1,38 @@
+.root {
+  display: flex;
+  align-items: center;
+  height: 72px;
+
+  @media screen and (min-width: 768px) {
+    height: 80px;
+  }
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 28px 16px;
+  color: rgb(236, 229, 229);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    padding: 30px 16px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 0 24px;
+    border-bottom: 4px solid transparent;
+
+    &:hover {
+      padding: 0 24px;
+      border-bottom: 4px solid #94D237;
+    }
+  }
+}
