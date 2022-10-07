@@ -1,0 +1,1 @@
+- add active state when anchor is clicked in navbar
