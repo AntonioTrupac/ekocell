@@ -2,19 +2,38 @@
 import styles from "./Navbar.module.scss";
 ---
 
-<nav class:list={[styles.root, "bg-secondary justify-between px-6"]}>
-  <a href="#" class="flex align-center">
-    <img
-      src="./eco-cell-horizontal.svg"
-      alt="Ekocell Logo"
-      class="h-[65px] w-full"
-    />
-  </a>
+<header class="bg-secondary px-6">
+  <nav class:list={[styles.root, "justify-between w-full"]}>
+    <a href="#" class="flex align-center">
+      <img
+        src="./eco-cell-horizontal.svg"
+        alt="Ekocell Logo"
+        class="lg:h-[65px] h-[55px] w-full"
+      />
+    </a>
 
-  <div class="flex align-center h-full">
-    <a href="#" class={styles.link}>Naslovna</a>
-    <a href="#" class={styles.link}>O nama</a>
-    <a href="#" class={styles.link}>Izolacija</a>
-    <a href="#" class={styles.link}>Kontakt</a>
+    <div class="lg:flex align-center h-full hidden">
+      <a href="/naslovna" class={styles.link}>Naslovna</a>
+      <a href="/onama" class={styles.link}>O nama</a>
+      <a href="/izolacija" class={styles.link}>Izolacija</a>
+      <a href="/kontakt" class={styles.link}>Kontakt</a>
+    </div>
+  </nav>
+
+  <div id={styles["hamburger-icon"]} onclick="toggleMobileMenu(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+
+    <ul class={styles["mobile-menu"]}>
+      <li><a href="/naslovna" class={styles.link}>Naslovna</a></li>
+      <li><a href="/onama" class={styles.link}>O nama</a></li>
+      <li><a href="/izolacija" class={styles.link}>Izolacija</a></li>
+      <li><a href="/kontakt" class={styles.link}>Kontakt</a></li>
+    </ul>
   </div>
-</nav>
+</header>
+
+<script>
+  import "./script";
+</script>
