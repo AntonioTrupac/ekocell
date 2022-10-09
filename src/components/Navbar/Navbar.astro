@@ -1,5 +1,6 @@
 ---
 import styles from "./Navbar.module.scss";
+import MobileNavbar from "@components/Navbar/MobileNavbar";
 ---
 
 <header class="bg-secondary px-6">
@@ -20,20 +21,5 @@ import styles from "./Navbar.module.scss";
     </div>
   </nav>
 
-  <div id={styles["hamburger-icon"]} onclick="toggleMobileMenu(this)">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-
-    <ul class={styles["mobile-menu"]}>
-      <li><a href="/naslovna" class={styles.link}>Naslovna</a></li>
-      <li><a href="/onama" class={styles.link}>O nama</a></li>
-      <li><a href="/izolacija" class={styles.link}>Izolacija</a></li>
-      <li><a href="/kontakt" class={styles.link}>Kontakt</a></li>
-    </ul>
-  </div>
+  <MobileNavbar client:load />
 </header>
-
-<script>
-  import "./script";
-</script>
