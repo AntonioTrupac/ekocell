@@ -9,11 +9,11 @@ const MobileNavbar = () => {
 
   return (
     <div id={styles["hamburger-icon"]}>
-      <div onClick={() => setIsClicked((prev) => !prev)}>
+      <span onClick={() => setIsClicked((prev) => !prev)}>
         <div className="bar1"></div>
         <div className="bar2"></div>
         <div className="bar3"></div>
-      </div>
+      </span>
 
       <ul
         className={
