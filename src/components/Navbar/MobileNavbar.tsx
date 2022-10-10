@@ -1,26 +1,27 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import styles from "./Navbar.module.scss";
 
 const MobileNavbar = () => {
-  const [menu, setMenu] = useState<Element | null>(null);
-  const toggleMobileMenu = (menu: Element | null): any => {
-    console.log("log me", menu);
-    menu && menu.classList.toggle("open");
-  };
+  const [isClicked, setIsClicked] = useState(false);
 
-  useEffect(() => {
-    const selectMenu = document.querySelector("hamburger-menu");
-    setMenu(selectMenu);
-  }, [menu]);
+  console.log(isClicked);
 
   return (
-    <div id={styles["hamburger-icon"]} onClick={() => toggleMobileMenu(menu)}>
-      <div className="bar1"></div>
-      <div className="bar2"></div>
-      <div className="bar3"></div>
+    <div id={styles["hamburger-icon"]}>
+      <div onClick={() => setIsClicked((prev) => !prev)}>
+        <div className="bar1"></div>
+        <div className="bar2"></div>
+        <div className="bar3"></div>
+      </div>
 
-      <ul className={styles["mobile-menu"]}>
+      <ul
+        className={
+          isClicked
+            ? `${styles.open} ${styles["mobile-menu"]}`
+            : `${styles["mobile-menu"]}`
+        }
+      >
         <li>
           <a href="/naslovna" className={styles.link}>
             Naslovna
