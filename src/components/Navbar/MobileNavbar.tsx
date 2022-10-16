@@ -1,12 +1,19 @@
-import { useState } from "react";
+import autoAnimate from "@formkit/auto-animate";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "./Navbar.module.scss";
 
 const MobileNavbar = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const parent = useRef(null);
+
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current);
+    document.body.style.overflow = isClicked ? "hidden" : "auto";
+  }, [isClicked, parent]);
 
   return (
-    <div id={styles["hamburger-icon"]}>
+    <div id={styles["hamburger-icon"]} ref={parent}>
       <span onClick={() => setIsClicked((prev) => !prev)}>
         <div
           className={
@@ -25,34 +32,36 @@ const MobileNavbar = () => {
         ></div>
       </span>
 
-      <ul
-        className={
-          isClicked
-            ? `${styles.open} ${styles["mobile-menu"]}`
-            : `${styles["mobile-menu"]}`
-        }
-      >
-        <li>
-          <a href="/naslovna" className={styles.link}>
-            Naslovna
-          </a>
-        </li>
-        <li>
-          <a href="/o-nama" className={styles.link}>
-            O nama
-          </a>
-        </li>
-        <li>
-          <a href="/izolacija" className={styles.link}>
-            Izolacija
-          </a>
-        </li>
-        <li>
-          <a href="/kontakt" className={styles.link}>
-            Kontakt
-          </a>
-        </li>
-      </ul>
+      {isClicked && (
+        <ul
+          className={
+            isClicked
+              ? `${styles.open} ${styles["mobile-menu"]}`
+              : `${styles["mobile-menu"]}`
+          }
+        >
+          <li>
+            <a href="/naslovna" className={styles.link}>
+              Naslovna
+            </a>
+          </li>
+          <li>
+            <a href="/o-nama" className={styles.link}>
+              O nama
+            </a>
+          </li>
+          <li>
+            <a href="/izolacija" className={styles.link}>
+              Izolacija
+            </a>
+          </li>
+          <li>
+            <a href="/kontakt" className={styles.link}>
+              Kontakt
+            </a>
+          </li>
+        </ul>
+      )}
     </div>
   );
 };
