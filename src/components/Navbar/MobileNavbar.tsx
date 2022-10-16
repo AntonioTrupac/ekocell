@@ -5,14 +5,24 @@ import styles from "./Navbar.module.scss";
 const MobileNavbar = () => {
   const [isClicked, setIsClicked] = useState(false);
 
-  console.log(isClicked);
-
   return (
     <div id={styles["hamburger-icon"]}>
       <span onClick={() => setIsClicked((prev) => !prev)}>
-        <div className="bar1"></div>
-        <div className="bar2"></div>
-        <div className="bar3"></div>
+        <div
+          className={
+            isClicked ? `${styles.open} ${styles.bar1}` : `${styles.bar1}`
+          }
+        ></div>
+        <div
+          className={
+            isClicked ? `${styles.open} ${styles.bar2}` : `${styles.bar2}`
+          }
+        ></div>
+        <div
+          className={
+            isClicked ? `${styles.open} ${styles.bar3}` : `${styles.bar3}`
+          }
+        ></div>
       </span>
 
       <ul
