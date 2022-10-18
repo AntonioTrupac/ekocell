@@ -15,34 +15,36 @@ const MobileNavbar = () => {
         )}
       </span>
 
-      <ul
-        className={
-          isClicked
-            ? `${styles.open} ${styles["mobile-menu"]}`
-            : `${styles["mobile-menu"]}`
-        }
-      >
-        <li>
-          <a href="/naslovna" className={styles.link}>
-            Naslovna
-          </a>
-        </li>
-        <li>
-          <a href="/o-nama" className={styles.link}>
-            O nama
-          </a>
-        </li>
-        <li>
-          <a href="/izolacija" className={styles.link}>
-            Izolacija
-          </a>
-        </li>
-        <li>
-          <a href="/kontakt" className={styles.link}>
-            Kontakt
-          </a>
-        </li>
-      </ul>
+      {isClicked && (
+        <ul
+          className={
+            isClicked
+              ? `${styles.open} ${styles["mobile-menu"]} p-6`
+              : `${styles["mobile-menu"]}`
+          }
+        >
+          <li className="mb-6">
+            <a href="/naslovna" className={styles.link}>
+              Naslovna
+            </a>
+          </li>
+          <li className="mb-6">
+            <a href="/o-nama" className={styles.link}>
+              O nama
+            </a>
+          </li>
+          <li className="mb-6">
+            <a href="/izolacija" className={styles.link}>
+              Izolacija
+            </a>
+          </li>
+          <li className="mb-6">
+            <a href="/kontakt" className={styles.link}>
+              Kontakt
+            </a>
+          </li>
+        </ul>
+      )}
     </div>
   );
 };
