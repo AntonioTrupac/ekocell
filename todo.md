@@ -4,4 +4,6 @@ Create mobile and tablet design {start:2022-10-16T18:50:48} {cm:2022-10-16} {dur
 
 Add animation to mobile dropdown
 
+Make autoAnimated mobile navbar animate itself from top to bottom
+
 Create contact page

@@ -12,11 +12,12 @@ header {
 
   @media only screen and (min-width: 1024px) {
     height: 80px;
+
     nav {
       display: block;
     }
 
-    #hamburger-icon {
+    .burger-wrapper {
       display: none;
     }
   }
@@ -54,9 +55,10 @@ header {
     }
   }
 
-  #hamburger-icon {
+  .burger-wrapper {
     margin: auto 0;
     cursor: pointer;
+    transition: all 250ms ease-in;
 
     & div {
       width: 35px;
@@ -73,12 +75,13 @@ header {
 
     & .mobile-menu {
       display: none;
-      position: fixed;
+      position: absolute;
       top: 72px;
       left: 0;
       height: 0%;
       width: 100%;
       background-color: $secondary;
+      transition: all 0.4s;
     }
 
     .open {
@@ -88,20 +91,6 @@ header {
         align-items: center;
         justify-content: flex-start;
         height: calc(100vh - 72px);
-      }
-
-      &.bar1 {
-        -webkit-transform: rotate(-45deg) translate(-6px, 6px);
-        transform: rotate(-45deg) translate(-6px, 6px);
-      }
-
-      &.bar2 {
-        opacity: 0;
-      }
-
-      &.bar3 {
-        -webkit-transform: rotate(45deg) translate(-6px, -6px);
-        transform: rotate(45deg) translate(-6px, -6px);
       }
     }
   }
