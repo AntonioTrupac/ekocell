@@ -7,13 +7,16 @@ const MobileNavbar = () => {
 
   return (
     <div className={styles["burger-wrapper"]}>
-      <span onClick={() => setIsClicked((prev) => !prev)}>
+      <button
+        onClick={() => setIsClicked((prev) => !prev)}
+        className="rounded-[50%] active:bg-tertiary p-1"
+      >
         {isClicked ? (
           <img src="./close.svg" alt="Close menu" width={35} height={35} />
         ) : (
           <img src="./menu.svg" alt="Open menu" width={35} height={35} />
         )}
-      </span>
+      </button>
 
       {isClicked && (
         <ul
