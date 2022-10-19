@@ -1,0 +1,39 @@
+---
+import Heading1 from "@components/Heading/Heading1.astro";
+import Paragraph from "@components/Paragraph/Paragraph.astro";
+import Layout from "src/layouts/Layout.astro";
+
+interface Frontmatter {
+  paragraphOne: string;
+  paragraphTwo: string;
+  paragraphThree: string;
+}
+
+const mdx = await Astro.glob<Frontmatter>("@components/MDX/o-nama-content.mdx");
+---
+
+<Layout title="O nama | Ekocell">
+  <main class="px-6 py-10">
+    <Heading1>O nama</Heading1>
+
+    {
+      mdx.map((page) => {
+        return (
+          <div class="mt-10 text-center">
+            <Paragraph className="mb-5">
+              {page.frontmatter.paragraphOne}
+            </Paragraph>
+
+            <Paragraph className="mb-5">
+              {page.frontmatter.paragraphTwo}
+            </Paragraph>
+
+            <Paragraph className="mb-5">
+              {page.frontmatter.paragraphThree}
+            </Paragraph>
+          </div>
+        );
+      })
+    }
+  </main>
+</Layout>
