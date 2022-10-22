@@ -27,7 +27,7 @@ const MobileNavbar = () => {
           }
         >
           <li className="mb-6">
-            <a href="/naslovna" className={styles.link}>
+            <a href="/" className={styles.link}>
               Naslovna
             </a>
           </li>
