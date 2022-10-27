@@ -1,9 +1,19 @@
 ---
+import ContactInfo from "@components/ContactInfo/ContactInfo.astro";
+import Heading1 from "@components/Heading/Heading1.astro";
 import Layout from "src/layouts/Layout.astro";
 ---
 
 <Layout title="Kontakt | Ekocell">
-  <section>
-    <h1>Kontakt</h1>
+  <section onclick="addSomething()" class="px-6 py-10">
+    <Heading1 className="mb-6">Kontakt</Heading1>
+
+    <ContactInfo />
   </section>
 </Layout>
+
+<script is:inline>
+  function addSomething() {
+    console.log("Hello World");
+  }
+</script>
