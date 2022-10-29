@@ -2,6 +2,8 @@ import type { IFormValue } from "@components/Form/Form";
 import type { TextareaHTMLAttributes } from "react";
 import type { Path, UseFormRegister, ValidationRule } from "react-hook-form";
 
+import classes from "./Input.module.scss";
+
 type OmitTextAreaElement = Omit<
   TextareaHTMLAttributes<HTMLTextAreaElement>,
   "required"
@@ -19,12 +21,21 @@ const TextArea = ({
   name,
   required,
   className,
+  placeholder,
+  rows = 3,
   ...props
 }: TextAreaProps) => {
   return (
-    <div className={className}>
-      <textarea {...register(name, { required })} {...props} />
-    </div>
+    <label className={className}>
+      <span className="text-label mb-1">{placeholder}</span>
+      <textarea
+        placeholder={placeholder}
+        rows={rows}
+        className={classes.input}
+        {...register(name, { required })}
+        {...props}
+      />
+    </label>
   );
 };
 

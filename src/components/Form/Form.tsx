@@ -35,11 +35,22 @@ const Form = () => {
       </h2>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Input name="ime" placeholder="Ime" register={register} />
-
-        <Input name="prezime" placeholder="Prezime" register={register} />
+        <Input
+          className="flex flex-col mt-6"
+          name="ime"
+          placeholder="Ime"
+          register={register}
+        />
 
         <Input
+          className="flex flex-col mt-3"
+          name="prezime"
+          placeholder="Prezime"
+          register={register}
+        />
+
+        <Input
+          className="flex flex-col mt-3"
           type="email"
           name="email"
           placeholder="Email"
@@ -47,13 +58,19 @@ const Form = () => {
         />
 
         <Input
+          className="flex flex-col mt-3"
           type="tel"
           name="telefon"
           placeholder="Telefon"
           register={register}
         />
 
-        <TextArea name="upit" placeholder="Upit" register={register} />
+        <TextArea
+          className="flex flex-col mt-3"
+          name="upit"
+          placeholder="Upit"
+          register={register}
+        />
 
         <button type="submit">Pošaljite</button>
       </form>

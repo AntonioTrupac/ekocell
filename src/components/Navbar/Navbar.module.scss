@@ -67,6 +67,7 @@ header {
   align-items: center;
   cursor: pointer;
   transition: opacity 1ms ease-in-out;
+  z-index: 999;
 
   & .mobile-menu {
     display: none;
