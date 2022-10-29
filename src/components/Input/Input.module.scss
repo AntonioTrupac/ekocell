@@ -1,7 +1,7 @@
 @import '../../scss/_variables.scss';
 
 .input {
-  @apply rounded-[4px] placeholder:text-stone-500 text-neutral-700 bg-input p-3;
+  @apply rounded-[4px] placeholder:text-stone-500 text-neutral-800 bg-input p-3;
 
   /* Remove outline for non-keyboard :focus */
   *:focus:not(:focus-visible) {
