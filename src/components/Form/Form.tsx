@@ -1,3 +1,4 @@
+import SubmitButton from "@components/Button/SubmitButton";
 import Input from "@components/Input/Input";
 import TextArea from "@components/Input/TextArea";
 import type { SubmitHandler } from "react-hook-form";
@@ -34,23 +35,26 @@ const Form = () => {
         Ispunite formu za detaljnije upite
       </h2>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col items-end"
+      >
         <Input
-          className="flex flex-col mt-6"
+          className="flex flex-col mt-6 w-full"
           name="ime"
           placeholder="Ime"
           register={register}
         />
 
         <Input
-          className="flex flex-col mt-3"
+          className="flex flex-col mt-3 w-full"
           name="prezime"
           placeholder="Prezime"
           register={register}
         />
 
         <Input
-          className="flex flex-col mt-3"
+          className="flex flex-col mt-3 w-full"
           type="email"
           name="email"
           placeholder="Email"
@@ -58,7 +62,7 @@ const Form = () => {
         />
 
         <Input
-          className="flex flex-col mt-3"
+          className="flex flex-col mt-3 w-full"
           type="tel"
           name="telefon"
           placeholder="Telefon"
@@ -66,13 +70,15 @@ const Form = () => {
         />
 
         <TextArea
-          className="flex flex-col mt-3"
+          className="flex flex-col mt-3 w-full"
           name="upit"
           placeholder="Upit"
           register={register}
         />
 
-        <button type="submit">Pošaljite</button>
+        <SubmitButton className="mt-6" type="submit">
+          Pošaljite
+        </SubmitButton>
       </form>
     </div>
   );
