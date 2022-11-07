@@ -1,0 +1,19 @@
+---
+import { Sponsor, sponsors } from "../data/sponsors";
+---
+
+<div class="mt-10">
+  <h2 class="text-center font-medium text-2xl">Naši Partneri</h2>
+
+  <div class="grid grid-cols-2 justify-items-center gap-2">
+    {
+      sponsors.map((s: Sponsor) => (
+        <img
+          class="w-24 h-24 md:w-[134px] md:h-[134px]"
+          src={s.src}
+          alt={s.alt}
+        />
+      ))
+    }
+  </div>
+</div>

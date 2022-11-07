@@ -30,17 +30,13 @@ const Form = () => {
   };
 
   return (
-    <div className="mt-10">
-      <h2 className="font-medium text-2xl">
-        Ispunite formu za detaljnije upite
-      </h2>
-
+    <div className="mt-10 md:mt-0 flex-grow">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col items-end"
       >
         <Input
-          className="flex flex-col mt-6 w-full"
+          className="flex flex-col mt-6 md:mt-2 w-full"
           name="ime"
           placeholder="Ime"
           register={register}
